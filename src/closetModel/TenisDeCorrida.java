@@ -1,10 +1,10 @@
-package closet.model;
+package closetModel;
 
 public class TenisDeCorrida extends Shoes {
     private String modeloCorrida;
 
-    public TenisDeCorrida(int numero, String nome, float preco, int tipo, String modeloCorrida) {
-        super(numero, nome, preco, tipo);
+    public TenisDeCorrida(int numero, String cliente, String marca, double preco, int tipo, String modeloCorrida) {
+        super(numero, cliente, marca, preco, tipo);
         this.modeloCorrida = modeloCorrida;
     }
 

@@ -1,6 +1,6 @@
 package closetRepository;
 
-import closet.model.Shoes;
+import closetModel.Shoes;
 public interface Repository {
 
     // CRUD do Shoes

@@ -1,17 +1,21 @@
-package closet.model;
+package closetModel;
 
 public abstract class Shoes {
 
     // Atributos Classe Shoes
     private int numero;
-    private String nome;
+    private String cliente;
+    private String marca;
     private double preco;
     private int tipo;
 
     // Construtor
-    public Shoes(int numero, String nome, float preco, int tipo) {
+
+
+    public Shoes(int numero, String cliente, String marca, double preco, int tipo) {
         this.numero = numero;
-        this.nome = nome;
+        this.cliente = cliente;
+        this.marca = marca;
         this.preco = preco;
         this.tipo = tipo;
     }
@@ -24,12 +28,20 @@ public abstract class Shoes {
         this.numero = numero;
     }
 
-    public String getNome() {
-        return nome;
+    public String getCliente() {
+        return cliente;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setCliente(String cliente) {
+        cliente = cliente;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String nome) {
+        this.marca = marca;
     }
 
     public double getPreco() {
@@ -63,7 +75,8 @@ public abstract class Shoes {
 
         System.out.println("Detalhes do Tênis: ");
         System.out.println("Número de Série: " + this.numero);
-        System.out.println("Nome: " + this.nome);
+        System.out.println("Nome: " + this.cliente);
+        System.out.println("Marca: " + this.marca);
         System.out.println("Preço: " + this.preco);
         System.out.println("Tipo: " + tipo);
     }

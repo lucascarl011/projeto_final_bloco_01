@@ -1,6 +1,6 @@
 package closetController;
 
-import closet.model.Shoes;
+import closetModel.Shoes;
 import closetRepository.Repository;
 
 import java.util.ArrayList;
@@ -33,18 +33,18 @@ public class Controller implements Repository {
     @Override
     public void cadastrar(Shoes shoes) {
         listaShoes.add(shoes);
-        System.out.println("\nO Tênis número: " + shoes.getNumero() + " foi criado com sucesso!");
+
     }
 
     @Override
     public void atualizar(Shoes shoes) {
-        var buscaShoes = buscarNaCollection(shoes.getNumero());
+        Shoes buscaShoes = buscarNaCollection(shoes.getNumero());
 
         if (buscaShoes != null) {
             listaShoes.set(listaShoes.indexOf(buscaShoes), shoes);
-            System.out.println("\nO Tênis número: " + shoes.getNumero() + " foi atualizado com sucesso!");
-        }else {
-            System.out.println("\nO Tênis número: " + shoes.getNumero() + " não foi encontrado!");
+            System.out.println("\nO produto número: " + shoes.getNumero() + " foi atualizado com sucesso!");
+        } else {
+            System.out.println("\nO produto número: " + shoes.getNumero() + " não foi encontrado!");
         }
     }
 
