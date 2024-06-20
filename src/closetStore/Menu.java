@@ -1,25 +1,32 @@
-package Aplicação;
+package closetStore;
+
+import closet.model.TenisDeCorrida;
 
 import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
     public static void main (String[] args) {
+        TenisDeCorrida s1 = new TenisDeCorrida(1,"Nike",100,"corrida",23,"Air max", 1);
+        s1.visualizar();
         Scanner sc = new Scanner(System.in);
 
         int opcao;
 
         while(true) {
-
-            System.out.println("Seja bem vindo a Closet Brasil!!!");
-            System.out.println("Selecione o produto desejado: ");
             System.out.println("**********************************************");
-            System.out.println("        1 - Cadastrar produto");
-            System.out.println("        2 - Exibir produto");
-            System.out.println("        3 - Encontrar produto por número");
-            System.out.println("        4 - Atualizar produto");
-            System.out.println("        5 - Apagar prduto");
-            System.out.println("        6 - Sair");
+            System.out.println("                                              ");
+            System.out.println("       Seja bem vindo a Closet Brasil!!!"      );
+            System.out.println("                                              ");
+            System.out.println("**********************************************");
+            System.out.println("          Selecione a opção desejada:         ");
+            System.out.println("**********************************************");
+            System.out.println("        1 - Cadastrar produto"                 );
+            System.out.println("        2 - Exibir todos os produtos"          );
+            System.out.println("        3 - Encontrar produto por número"      );
+            System.out.println("        4 - Atualizar produto"                 );
+            System.out.println("        5 - Apagar produto"                    );
+            System.out.println("        6 - Sair"                              );
             System.out.println("**********************************************");
 
             opcao = sc.nextInt();
