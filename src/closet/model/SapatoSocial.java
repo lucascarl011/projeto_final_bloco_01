@@ -3,9 +3,9 @@ package closet.model;
 public class SapatoSocial extends Shoes {
     private String modeloSocial;
 
-    public SapatoSocial(int numero, String nome, double preco, String descricao, int estoque, String modelo, int tipo) {
-        super(numero, nome, preco, descricao, estoque, tipo);
-        this.modeloSocial = modelo;
+    public SapatoSocial(int numero, String nome, double preco, int tipo, String modeloSocial) {
+        super(numero, nome, preco, tipo);
+        this.modeloSocial = modeloSocial;
     }
 
     public String getModelo() {

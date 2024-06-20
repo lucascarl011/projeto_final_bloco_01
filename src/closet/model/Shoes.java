@@ -6,26 +6,21 @@ public abstract class Shoes {
     private int numero;
     private String nome;
     private double preco;
-    private String descricao;
-    private int estoque;
     private int tipo;
 
     // Construtor
-    public Shoes(int numero, String nome, double preco, String descricao, int estoque, int tipo) {
+    public Shoes(int numero, String nome, float preco, int tipo) {
         this.numero = numero;
         this.nome = nome;
         this.preco = preco;
-        this.descricao = descricao;
-        this.estoque = estoque;
         this.tipo = tipo;
     }
 
-    // Get e Set
     public int getNumero() {
         return numero;
     }
 
-    public void setNumero() {
+    public void setNumero(int numero) {
         this.numero = numero;
     }
 
@@ -43,22 +38,6 @@ public abstract class Shoes {
 
     public void setPreco(double preco) {
         this.preco = preco;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public int getEstoque() {
-        return estoque;
-    }
-
-    public void setEstoque(int estoque) {
-        this.estoque = estoque;
     }
 
     public int getTipo() {
@@ -86,8 +65,6 @@ public abstract class Shoes {
         System.out.println("Número de Série: " + this.numero);
         System.out.println("Nome: " + this.nome);
         System.out.println("Preço: " + this.preco);
-        System.out.println("Descrição: " + this.descricao);
-        System.out.println("Estoque: " + this.estoque);
         System.out.println("Tipo: " + tipo);
     }
 }

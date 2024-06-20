@@ -1,17 +1,38 @@
 package closetStore;
 
+import closet.model.SapatoSocial;
 import closet.model.TenisDeCorrida;
+import closetController.Controller;
 
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
     public static void main (String[] args) {
-        TenisDeCorrida s1 = new TenisDeCorrida(1,"Nike",100,"corrida",23,"Air max", 1);
-        s1.visualizar();
         Scanner sc = new Scanner(System.in);
 
-        int opcao;
+        int opcao, numero, tipo;
+        String nome;
+        float preco;
+
+        Controller shoes = new Controller();
+
+        System.out.println("\nCriar produto Tênis\n");
+
+        TenisDeCorrida Tc1 = new TenisDeCorrida(1,"Nike",450f, "Air Max");
+        shoes.cadastrar(Tc1);
+
+        TenisDeCorrida Tc2 = new TenisDeCorrida(2,"Adidas",250f,54,1, "SuperStar");
+        shoes.cadastrar(Tc2);
+
+        SapatoSocial Ss1 = new SapatoSocial(3,"Lacoste",850f,75, "SuperCasual");
+        shoes.cadastrar(Ss1);
+
+        SapatoSocial Ss2 = new SapatoSocial(4,"Tommy Hilfiger",600f,85, "ModeloPaly");
+        shoes.cadastrar(Ss2);
+
+        shoes.listarTodas();
 
         while(true) {
             System.out.println("**********************************************");
@@ -29,7 +50,13 @@ public class Menu {
             System.out.println("        6 - Sair"                              );
             System.out.println("**********************************************");
 
-            opcao = sc.nextInt();
+            try {
+                opcao = sc.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("\nDigite valores inteiros!");
+                sc.nextLine();
+                opcao = 0;
+            }
 
             if (opcao == 6) {
                 System.out.println("***************************************************");
@@ -42,7 +69,28 @@ public class Menu {
             switch (opcao) {
                 case 1:
                     // Cadastrar
+                    System.out.println("Criar Conta\n\n");
 
+                    System.out.println("Digite o numero do produto: ");
+                    numero = sc.nextInt();
+                    System.out.println("Digite a marca do produto: ");
+                    sc.skip("\\R?");
+                    nome = sc.nextLine();
+
+                    do {
+                        System.out.println("Digite o Tipo do produto (1-Tênis de Corrida ou 2-Sapato Social): ");
+                        tipo = sc.nextInt();
+                    } while (tipo < 1 && tipo > 2);
+
+                    System.out.println("Digite o valor do produto (R$): ");
+                    preco = sc.nextFloat();
+
+                    switch (tipo) {
+                        case 1 -> {
+                            System.out.println("Digite");
+                            shoes.cadastrar(new TenisDeCorrida(shoes.gerarNumero(), numero, nome, preco, tipo));
+                        }
+                    }
                     keyPress();
                     break;
                 case 2:
@@ -72,21 +120,22 @@ public class Menu {
 
 
     }
-
-    public static void sobre() {
-        System.out.println("\n*****************************************************");
-        System.out.println("Projeto Desenvolvido por: ");
-        System.out.println("Lucas Carlos Batista - lucassscarlosss54@gmail.com");
-        System.out.println("github.com/lucascarl011");
-        System.out.println("*******************************************************");
-    }
-
-    private static void keyPress() {
-        try {
-            System.out.println("\nPressione Enter para Seguir...");
-            System.in.read();
-        } catch (IOException e) {
-            System.out.println("Você não pressionou Enter!");
+        public static void sobre() {
+            System.out.println("\n*****************************************************");
+            System.out.println("Projeto Desenvolvido por: ");
+            System.out.println("Lucas Carlos Batista - lucassscarlosss54@gmail.com");
+            System.out.println("github.com/lucascarl011");
+            System.out.println("*******************************************************");
         }
-    }
+
+        private static void keyPress() {
+            try {
+                System.out.println("\nPressione Enter para Seguir...");
+                System.in.read();
+            } catch (IOException e) {
+                System.out.println("Você não pressionou Enter!");
+            }
+        }
+
+
 }
